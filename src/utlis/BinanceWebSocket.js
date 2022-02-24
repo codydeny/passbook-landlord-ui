@@ -1,0 +1,1 @@
+export const BINANCE_SOCKET = new WebSocket('wss://stream.binance.com:9443/ws')
