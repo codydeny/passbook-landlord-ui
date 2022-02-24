@@ -19,10 +19,13 @@ import FolderIcon from '@mui/icons-material/Folder';
 import DeleteIcon from '@mui/icons-material/Delete';
 import PersonIcon from '@mui/icons-material/Person';
 import AccessTimeFilledIcon from '@mui/icons-material/AccessTimeFilled';
+import InfoIcon from '@mui/icons-material/Info';
+import { Link } from 'react-router-dom';
 
   const Demo = styled('div')(({ theme }) => ({
     backgroundColor: theme.palette.background.paper,
   }));
+
 
 export default function InProgressRentees() {
     const store = useStore();
@@ -30,9 +33,9 @@ export default function InProgressRentees() {
     const [secondary, setSecondary] = React.useState(false);
   return (
     <div>
-        <Box sx={{ flexGrow: 1, maxWidth: 752 }}>
+        <Box className="max-w-xl md:w-96 lg:w-screen">
           <Grid container spacing={2}>
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} md={12}>
               <Typography sx={{ mt: 4, mb: 2 }} variant="h6" component="div">
               Incoming Rentees <ArrowForwardIcon />
               </Typography>
@@ -64,29 +67,31 @@ export default function InProgressRentees() {
                     </ListItem>
                     ))}
 
-                    <ListItem
-                      secondaryAction={
-                        <IconButton edge="end" aria-label="delete">
-                          <DeleteIcon />
-                        </IconButton>
-                      }
-                    >
-                      <ListItemAvatar>
-                      <Avatar
-                            circle
-                            className="w-full h-full"
-                            style={{ background: '#fed7aa', color: '#fb923c', width : '40px', height : '40px' }}
+                     <Link to="/incoming/9027282482">
+                        <ListItem
+                          secondaryAction={
+                            <IconButton edge="end" aria-label="delete">
+                              <ArrowForwardIcon/>
+                            </IconButton>
+                          }
                         >
-                            <PersonIcon className="text-6xl font-medium" />
-                        </Avatar>
-                      </ListItemAvatar>
-                      <ListItemText
-                        primary="9999888888"
-                        secondary={<div className="text-xs">
-                           <AccessTimeFilledIcon sx={{fontSize : '14px'}}/> Waiting For Rental Terms
-                        </div>}
-                      />
-                    </ListItem>
+                          <ListItemAvatar>
+                          <Avatar
+                                circle
+                                className="w-full h-full"
+                                style={{ background: '#fed7aa', color: '#fb923c', width : '40px', height : '40px' }}
+                            >
+                                <PersonIcon className="text-6xl font-medium" />
+                          </Avatar>
+                          </ListItemAvatar>
+                          <ListItemText
+                            primary="9999888888"
+                            secondary={<div className="text-xs">
+                               <InfoIcon sx={{fontSize : '14px', color : '#fb923c'}}/> Waiting For Rental Terms
+                            </div>}
+                          />
+                        </ListItem>
+                    </Link>
                 </List>
               </Demo>
             </Grid>

@@ -40,7 +40,7 @@ export default function TotalRentees() {
     <div>
         <Box sx={{ flexGrow: 1, maxWidth: 752 }}>
           <Grid container spacing={2}>
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} md={12}>
               <Typography sx={{ mt: 4, mb: 2 }} variant="h6" component="div">
               Your Rentees <ArrowForwardIcon />
               </Typography>
@@ -50,7 +50,7 @@ export default function TotalRentees() {
                         <Link to={`/rentee/${val}`}>
                     <ListItem
                       secondaryAction={
-                        <IconButton edge="end" aria-label="delete">
+                        <IconButton edge="end" aria-label="delete" className="cursor-pointer">
                           <ArrowForwardIcon sx={{fontSize : '24px'}} />
                         </IconButton>
                       }

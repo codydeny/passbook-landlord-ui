@@ -6,7 +6,7 @@ if(process.env.NODE_ENV === 'development') {
   }
   
   if(process.env.NODE_ENV === 'production') {
-    GLOBAL_URL = 'https://justcookapi.herokuapp.com/api'
+    GLOBAL_URL = 'S'
   }
 
 export {GLOBAL_URL}

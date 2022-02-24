@@ -15,6 +15,7 @@ import { TransitionGroup, CSSTransition } from "react-transition-group";
 import "./App.css";
 import { useTheme } from '@mui/material/styles';
 import RenteeProfile from "./components/RenteeProfile";
+import InProgressRenteesDetail from "./components/InProgressRenteesDetail";
 
 function App() {
   const location = useLocation();
@@ -99,16 +100,14 @@ function App() {
          </StoreContext.Consumer>
         <CssBaseline/>
         <Layout changeTheme={toggleTheme} theme={themeMode}>
-          <>
-            <>
-              <Routes>
-                  <Route path="rentee/:id/*" element={<RenteeProfile/>} />
-                  <Route path="/login" element={<Login/>} />
-                  <Route path="/onboarding" element={<p>Onboarding</p>} />
-                  <Route path="/" element={<Home/>} />
-              </Routes>
-            </>
-          </>
+          <Routes>
+              <Route path="rentee/:id/*" element={<RenteeProfile/>} />
+              <Route path="incoming/:id/*" element={<InProgressRenteesDetail/>} />
+              <Route path="/login" element={<Login/>} />
+              <Route path="/onboarding" element={<p>Onboarding</p>} />
+              <Route path="/onboarding" element={<p>Onboarding</p>} />
+              <Route path="/" element={<Home/>} />
+          </Routes>
         </Layout>
       </ThemeProvider>
   </StoreProvider>

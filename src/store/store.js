@@ -3,8 +3,6 @@ import React from 'react';
 import { withSnackbar } from 'notistack';
 import {Auth, Firestore as db} from "../firebase"
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
-import { collection, getDocs } from "firebase/firestore";
-import { BINANCE_SOCKET } from '../utlis/BinanceWebSocket';
 
 const StoreContext = React.createContext();
 

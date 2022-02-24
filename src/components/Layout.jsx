@@ -139,18 +139,7 @@ export default function Layout(props) {
       <CssBaseline />
       <AppBar position="fixed" open={open} color="inherit" className="dark:bg-black">
         <Toolbar>
-          {/* <IconButton
-            color="inherit"
-            aria-label="open drawer"
-           // onClick={handleDrawerOpen}
-            edge="start"
-            sx={{
-              marginRight: '36px',
-              ...(open && { display: 'none' }),
-            }}
-          >
-           <img src={Logo} height={35} width={35} className="rounded-lg"/>
-          </IconButton> */}
+
           <span className={`flex flex-row font-sans absolute transition ease-in-out delay-150 animate__animated ${animatePulse} cursor-pointer`} onClick={(e)=> {
             setAnimatePulse("animate__wobble text-yellow-500");
             setTimeout(()=> {
@@ -161,80 +150,6 @@ export default function Layout(props) {
             {/* {animate__flash} */}
           <Bolt className={`${animatePulse}`} style={{marginTop : '1px', fontSize : '1.8em'}}/> <span className="animate__animated text-gray-500 text-sans mt-1 ">PassBook</span>
           </span>
-          {/* <IconButton
-            sx={{
-                position : 'absolute',
-                right : '0',
-                margin : '100px'
-              }}
-            edge="end"
-            color="inherit"
-            aria-label="open drawer"
-            onClick={()=> setShowFeatureDialog(true)}
-          >
-              <Translate/>
-              <Transition appear show={showFeatureDialog} as={React.Fragment}>
-                <Dialog
-                  as="div"
-                  className="fixed inset-0 z-10 overflow-y-auto"
-                  onClose={()=> setShowFeatureDialog(false)}
-                >
-                  <div className="min-h-screen px-4 text-center">
-                    <Transition.Child
-                      as={React.Fragment}
-                      enter="ease-out duration-300"
-                      enterFrom="opacity-0"
-                      enterTo="opacity-100"
-                      leave="ease-in duration-200"
-                      leaveFrom="opacity-100"
-                      leaveTo="opacity-0"
-                    >
-                      <Dialog.Overlay className="fixed inset-0" />
-                    </Transition.Child>
-                    <span
-                      className="inline-block h-screen align-middle"
-                      aria-hidden="true"
-                    >
-                      &#8203;
-                    </span>
-                    <Transition.Child
-                      as={React.Fragment}
-                      enter="ease-out duration-300"
-                      enterFrom="opacity-0 scale-95"
-                      enterTo="opacity-100 scale-100"
-                      leave="ease-in duration-200"
-                      leaveFrom="opacity-100 scale-100"
-                      leaveTo="opacity-0 scale-95"
-                    >
-                      <div className="inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl">
-                        <Dialog.Title
-                          as="h3"
-                          className="text-lg font-medium leading-6 text-gray-900 flex flex-row"
-                        >
-                         <HeartIcon className="animate-pulse mb-1 mr-3 h-5 text-red-500"/> Coming Soon
-                        </Dialog.Title>
-                        <div className="mt-2">
-                          <p className="text-sm text-gray-500">
-                            This feature is currently under development. We are a small team of developers.
-                            If you can contribute, please head to <code>github.com/ssdet/placeme-frontend</code>.
-                          </p>
-                        </div>
-
-                        <div className="mt-4">
-                          <button
-                            type="button"
-                            className="inline-flex justify-center px-4 py-2 text-sm font-medium text-blue-900 bg-blue-100 border border-transparent rounded-md hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
-                            onClick={()=> setShowFeatureDialog(false)}
-                          >
-                            Got it, thanks!
-                          </button>
-                        </div>
-                      </div>
-                    </Transition.Child>
-                  </div>
-                </Dialog>
-              </Transition>
-          </IconButton> */}
           
           <IconButton
                 sx={{
@@ -261,67 +176,9 @@ export default function Layout(props) {
               </IconButton>
         </Toolbar>
       </AppBar>
-      {/* <Drawer variant="persistent" open={false}>
-        <DrawerHeader>
-          <IconButton onClick={handleDrawerClose}>
-            {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
-          </IconButton>
-        </DrawerHeader>
-        <Divider />
-        <List>
-            <ListItem button key="StudentAgr">
-              <ListItemIcon>
-                <Person/>
-              </ListItemIcon>
-              <ListItemText primary="Profile" />
-            </ListItem>
-        </List>
-        <List>
-            <ListItem button key="StudentAgr">
-              <ListItemIcon>
-                <FingerprintSharpIcon color="primary"/>
-              </ListItemIcon>
-              <ListItemText primary="Aggregator" />
-            </ListItem>
-        </List>
-        <List>
-            <ListItem button key="">
-              <ListItemIcon >
-                <NearMeSharpIcon color="primary"/>
-              </ListItemIcon>
-              <ListItemText primary="Drives" />
-            </ListItem>
-        </List>
-        <List>
-            <ListItem button key="">
-              <ListItemIcon>
-                  <Bolt className="text-green-500"/>
-              </ListItemIcon>
-              <ListItemText primary="Learn"/>
-            </ListItem>
-        </List>
-        <Divider />
-        <List>
-        <ListItem button key="">
-              <ListItemIcon>
-                  <GitHub />
-              </ListItemIcon>
-              <ListItemText primary="Contribute" />
-            </ListItem>
-        </List>
-        <List>
-        <ListItem button key="">
-              <ListItemIcon>
-                  <Badge badgeContent={<ArrowForward sx={{ fontSize: 10 }}/>}>
-                    <Public/>
-                  </Badge>
-              </ListItemIcon>
-              <ListItemText primary="Blog" />
-            </ListItem>
-        </List>
-      </Drawer> */}
+      
 
-      <Box component="main" sx={{ flexGrow: 1, paddingY : 3 }}>
+      <Box component="main" sx={{ flexGrow: 1, paddingY : 3 }} className="flex flex-row justify-center mt-14">
         <DrawerHeader />
         {props.children}
       </Box>
