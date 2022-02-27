@@ -85,7 +85,7 @@ export default function InProgressRentees() {
                           </Avatar>
                           </ListItemAvatar>
                           <ListItemText
-                            primary="9999888888"
+                            primary="9027282482"
                             secondary={<div className="text-xs">
                                <InfoIcon sx={{fontSize : '14px', color : '#fb923c'}}/> Waiting For Rental Terms
                             </div>}
