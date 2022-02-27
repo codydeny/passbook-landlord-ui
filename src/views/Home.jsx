@@ -9,6 +9,8 @@ import ReplayIcon from '@mui/icons-material/Replay';
 import { Divider } from '@mui/material';
 import TotalRentees from '../components/TotalRentees';
 import InProgressRentees from '../components/InProgressRentees';
+import Onboarding from '../components/onboarding/Onboarding';
+import AgreementTerms from '../components/AgreementTerms';
 
 export default function Home() {
     const store = useStore()
@@ -49,6 +51,8 @@ export default function Home() {
 
     return (
         <div className="max-w-xl">
+
+           {/* <AgreementTerms/> */}
 
         {step===1 && newAdded && <div id="toast-default" class="my-5 flex items-center w-full max-w-lg p-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800" role="alert">
         <div class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-blue-500 bg-blue-100 rounded-lg dark:bg-blue-800 dark:text-blue-200">

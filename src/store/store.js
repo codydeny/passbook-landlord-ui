@@ -24,7 +24,8 @@ class StoreProvider extends React.Component {
         loading : false,
         inProgressRentees : {
           9026272824 : 9026272824
-        }
+        },
+        rentalSore : {}
     }
 }
 
@@ -32,6 +33,39 @@ class StoreProvider extends React.Component {
     return (
       <StoreContext.Provider value = {{ 
         state: this.state,
+
+        submitForm : (e, extras={}) => {
+          e.preventDefault();
+          let formData = new FormData(e.target);
+          formData = Object.fromEntries(formData)
+          formData = {...formData, ...extras}
+          console.log(formData)
+        },
+
+        createLease : (e, extras={}) => {
+          e.preventDefault();
+          let formData = new FormData(e.target);
+          formData = Object.fromEntries(formData)
+          formData = {...formData, ...extras}
+          this.setState({ loading : true });
+          axios.post(`/api/v1/lease/creation`, formData).then((res)=> {
+            this.setState({ loading : false });
+            this.setState({ lease : res.data });
+          })
+          
+        },
+
+        getRentalScore : (tenantId) => {
+          this.setState({ loading : true });
+          axios.get(`/api/v1/rentalscore/${tenantId}`).then((res)=> {
+            this.setState({ loading : false });
+            this.setState({ rentalSore : res.data });
+          })
+        },
+
+
+
+
 
         addInProgressRentee : (rentee) => {
           this.setState({
